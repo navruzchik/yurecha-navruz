@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0, 0, 0, 0.9);
+    font-size: 100px;
+    /* animation: size 5s linear inherit; */
+    animation-name: size;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+@keyframes size{
+  0%{
+    font-size:50px;
+  }
+  50%{
+    font-size: 100px;
+  }
+  100%{
+    font-size: 50px;
+  }
+}
+.container
+{
+    height: 2em;
+    width: 2em;
+    position: relative;
+     transform: rotate(45deg); 
+}
+.heart{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: red;
+    width: 2em;
+    height: 2em;
+}
+.heart::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: red;
+    width: 2em;
+    height: 2em;
+    z-index: 4;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    box-sizing: border-box;
+}
+.left{
+    position: absolute;
+    top: 0;
+    left: -1em;
+    background: red;
+    width: 1em;
+    height: 2em;
+    border-radius: 1em 0 0 1em ;
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+}
+.top{
+    position: absolute;
+    left: 0;
+    top: -1em;
+    background: red;
+    width: 2em;
+    height: 1em;
+    border-radius: 1em 1em 0 0 ;
+    border: 3px solid white;
+    border-bottom: none;
+}
+.heart , .top , .left{
+    box-shadow: 0 0 50px 0.25em red;
+}
